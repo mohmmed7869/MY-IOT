@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -220.2, "left": 28.2, "attrs": {} },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay1",
+      "top": -371.4,
+      "left": -265.2,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -518.1, "left": -43.8, "attrs": {} },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 117.3,
+      "left": 365.8,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -509.8,
+      "left": 59.4,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -388.8,
+      "left": 450.65,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -502.8,
+      "left": 455,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -579.6,
+      "left": -217,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -494.4,
+      "left": -221.35,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "pot1:GND", "uno:GND.2", "gold", [ "v-9.6", "h-38.4" ] ],
+    [ "pot1:SIG", "uno:A0", "blue", [ "v-28.8", "h0.4" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v-9.6", "h-37.6" ] ],
+    [ "uno:2", "r1:2", "green", [ "v-57.6", "h23.3" ] ],
+    [ "relay1:NO", "r2:2", "green", [ "v-68.4", "h7.8" ] ],
+    [ "led2:A", "r2:1", "green", [ "v67.2" ] ],
+    [ "led2:C", "uno:GND.1", "black", [ "v19.2", "h-134", "v278.4", "h451.2" ] ],
+    [ "relay1:VCC", "uno:5V", "red", [ "v288", "h9.6" ] ],
+    [ "relay1:GND", "uno:GND.2", "black", [ "v307.2", "h172.4", "v0", "h230.4", "v0", "h0" ] ],
+    [ "relay1:IN", "uno:5", "limegreen", [ "v19.2", "h422.2" ] ],
+    [ "dht1:GND", "uno:GND.2", "magenta", [ "v76.8", "h-86.4", "v384", "h297.6", "v-57.6" ] ],
+    [ "led1:C", "uno:GND.1", "yellow", [ "v38.4", "h-220.4", "v124.8", "h-105.6" ] ],
+    [ "led1:A", "r1:1", "green", [ "v48" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "v403.2", "h211.2", "v-9.6" ] ],
+    [ "servo1:GND", "uno:GND.1", "cyan", [ "v153.6", "h9.6" ] ],
+    [ "servo1:V+", "uno:5V", "white", [ "v86.4", "h-316.7", "v364.8", "h345.6" ] ]
+  ],
+  "dependencies": {}
+}
